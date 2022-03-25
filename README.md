@@ -23,7 +23,7 @@ El dataset está compuesto por \<N\> columnas, con la siguiente descripción:
 
 * **\<columna 1>**: de tipo \<tipo\>, representa....
 * **\<columna 2>**: de tipo \<tipo\>, representa....
-....
+
 
 ## Tipos implementados
 
@@ -38,28 +38,27 @@ Descripción breve del tipo base.
 - _apellidos_, de tipo \<Tipo2\>, consultable. 
 - dni, de tipo \<String\>, consultable. 
 - fechaNacimiento, de tipo \<LocalDate\>, consultable . 
-- ...
-- 
+
 **Constructores**: 
 
 - Static Persona of: Descripción del constructor 1.
 - C2: Descripción del constructor 2.
-- ...
 
 **Restricciones**:
  
 - R1: La fecha de nacimiento debe ser anterior a la fecha de hoy.
 - R2: El dni debe ser una cadena con ocho dígitos y seguidos de una letra.
-- ...
-- 
+
 **Criterio de igualdad**: Asociado por defecto al Record.
 
 **Criterio de ordenación**:Se ordena por dni.
-
+**Propiedades Derivadas**:
+- edad, de tipo \<Integer\>, consultable,derivada, a partir de la fecha de nacimiento. 
+- 
 **Otras operaciones**:
  
--	_método 1_: Descripción del método 1.
-- ...
+-	_dniValido_: Devuelve un tipo Boolean que es cierto si el dni tiene nueve caracteres,de ellos,
+8 son dígitos y el restante una letra, y falso si no cumple alguna de estas condiciones.	
 
 #### Tipos auxiliares
 Descripción de los tipos auxiliares que sean necesarios añadir al proyecto.
@@ -79,27 +78,30 @@ Descripción breve del tipo contenedor.
 - _persona_, de tipo \<Persona\>, consultable. 
 - _codigoIngreso_, de tipo \<String\>, consultable.
 - _fechaHoraIngreso_, de tipo \<LocalDateTime\>, consultable. 
-- ...
-- 
+
+
 **Constructores**: 
 
 - C1: Descripción del constructor 1.
 - C2: Descripción del constructor 2.
-- ...
+
 
 **Restricciones**:
  
 - R1: La fecha y hora de ingreso debe ser anterior o igual a la fecha de hoy.
-- ...
-- 
+
 **Criterio de igualdad**: Asociado por defecto al Record.
 
 **Criterio de ordenación**: No hay criterio de ordenación.
 
+**Propiedades derivadas**
+ 
+-	_fechaIngreso_, de tipo \<LocalDate\>, consultable,derivada, a partir de la fecha y hora de ingreso.
+-	_horaIngereso_, de tipo \<String\>, consultable,derivada, a partir de la fecha y hora de ingreso.
+-	
 **Otras operaciones**:
  
 -	_método 1_: Descripción del método 1.
-- ...
 
 #### Tipos auxiliares
 Descripción de los tipos auxiliares que sean necesarios añadir al proyecto.
@@ -116,36 +118,134 @@ Descripción breve del tipo contenedor.
 
 **Propiedades**:
 
-- _propiedad1_, de tipo \<Tipo1\>, consultable. 
-- _propiedad2_, de tipo \<Tipo2\>, consultable y modificable. 
-- ...
-- 
+- _Id_, de tipo \<String\>, consultable. 
+- _genero_, de tipo \<String\>, consultable.
+- _edad_, de tipo \<Double\>, consultable.
+- _hipertension_, de tipo \<Boolean\>, consultable.
+- _enfermedadCorazon_, de tipo \<Boolean\>, consultable.
+- _tipoResidencia_, de tipo \<TipoResidencia\>, consultable.
+- _nivelMedioGlucosa_, de tipo \<Double\>, consultable.
+
 **Constructores**: 
 
 - C1: Descripción del constructor 1.
 - C2: Descripción del constructor 2.
-- ...
+
 
 **Restricciones**:
  
-- R1: Descripción de la restricción 1.
-- R2: Descripción de la restricción 2.
-- ...
-- 
-**Criterio de igualdad**: Describir el criterio de igualdad
+- R1: La edad tiene que ser mayor o igual que cero y menor o igual que 130.
+- R2: El nivel medio de glucosa tiene que ser mayor o igual que cero.
 
-**Criterio de ordenación**: Describir el criterio de ordenación (si lo hay).
+**Criterio de igualdad**: Por defecto asociado al record. 
+
+**Criterio de ordenación**: Según la edad y el id
 
 **Otras operaciones**:
  
 -	_método 1_: Descripción del método 1.
-- ...
-- 
+
 #### Tipos auxiliares
 Descripción de los tipos auxiliares que sean necesarios añadir al proyecto.
 
 ### Factoría
 Descripción breve de la factoría.
 
-- _método static of_: recibe nombre, apellidos, dni y fecha de nacimiento y devuelve un objeto persona.
--	_método static parse_: Recibe una cadena con un formato específico y devuelve un objeto  persona.
+- _método static of_:  Recibe valores para cada propiedad básica y devuelve un objeto del tipo PacienteEstudio. 
+-	_método static parse_: Recibe valores para cada propiedad básica y devuelve un objeto del tipo PacienteEstudio.  
+
+
+### Tipo Vacunacion
+
+Descripción breve del tipo contenedor.
+
+**Propiedades**:
+
+- _Fecha_, de tipo \<LocalDate\>, consultable. 
+- _comunidad_, de tipo \<String\>, consultable.
+- _pfizer_, de tipo \<Integer\>, consultable.
+- _moderna_, de tipo \<Integer\>, consultable.
+- _astrazeneca_, de tipo \<Integer\>, consultable.
+- _janssen_, de tipo \<Integer\>, consultable.
+- _numeroTotal_, de tipo \<Integer\>, consultable.
+
+**Constructores**: 
+
+- C1: Descripción del constructor 1.
+- C2: Descripción del constructor 2.
+
+
+**Restricciones**:
+ 
+- R1: La fecha de debe ser posterior al 01/02/2021. 
+
+**Representación como cadena**: Por defecto asociado al record.
+
+**Criterio de igualdad**: Por defecto asociado al record. 
+
+**Criterio de ordenación**: por comunidad y en caso de igualdad por fecha.
+
+**Propiedades derivadas**
+ 
+-	_numeroTotal_, de tipo \<Integer\>, consultable,derivada, siendo la suma de dosis de Pfizer, moderna, astrazeneca y janssen.
+
+#### Tipos auxiliares
+Descripción de los tipos auxiliares que sean necesarios añadir al proyecto.
+
+### Factoría
+Descripción breve de la factoría.
+
+- _método static of_:  Recibe valores para cada propiedad básica y devuelve un objeto del tipo PacienteEstudio. 
+-	_método static parse_: Recibe valores para cada propiedad básica y devuelve un objeto del tipo PacienteEstudio.  
+
+
+### Tipo Medicamento
+
+Descripción breve del tipo contenedor.
+
+**Propiedades**:
+
+- _nombreMedicamento_, de tipo \<String\>, consultable. 
+- _tipoMedicamento_, de tipo \<TipoMedicamento\>, consultable.
+- _codigoEnfermedad_, de tipo \<String\>, consultable.
+- _farmaceutica_, de tipo \<String\>, consultable.
+- _puntuacion_, de tipo \<Double\>, consultable.
+- _indiceSomatico_, de tipo \<Integer\>, consultable.
+- _fechaCatalogo_, de tipo \<LocalDate\>, consultable y modificable.
+
+**Constructores**: 
+
+- C1: Descripción del constructor 1.
+- C2: Descripción del constructor 2.
+
+
+**Restricciones**:
+ 
+- R1: La puntación tiene que ser mayor estricta que cero. 
+- R2: El índice somático tiene que ser mayor o igual que 1000. 
+- R3: La fecha de catálogo tiene que ser posterior al 01/01/2015. 
+
+**Representación como cadena**: Según el nombre del medicamento y de la farmacéutica.
+
+**Criterio de igualdad**: Por nombre del medicamento y farmacéutica. 
+
+**Criterio de ordenación**:Por nombre del medicamento y en caso de igualdad por la farmacéutica.
+
+**Propiedades derivadas**
+ 
+-	_tratarEnfermdad_, de tipo \<Boolean\>, consultable,derivada, siendo cierta(true) si el código de la 
+enfermedad coincide con un parámetro de tipo cadena que reciben como argumento 
+la propiedad).
+
+#### Tipos auxiliares
+Descripción de los tipos auxiliares que sean necesarios añadir al proyecto.
+
+### Factoría
+Descripción breve de la factoría.
+
+-	_método static parse_: Recibe una cadena con un formato específico y devuelve un objeto de tipo Medicamento.  
+
+
+
+
+
