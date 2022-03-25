@@ -1,5 +1,5 @@
-# Proyecto del Segundo Cuatrimestre Fundamentos de Programación (Curso  \<2021\>/\<2022\>)
-Autor/a: \<Javier Nieto Vicioso\>   uvus:\<javnievic@us.es\>
+# Proyecto del Segundo Cuatrimestre Fundamentos de Programación (Curso  2021/2022)
+Autor/a: \<avier Nieto Vicioso\  uvus:\javnievic@us.es\
 
 Aquí debes añadir la descripción del dataset y un enunciado del dominio del proyecto.
 
@@ -34,15 +34,12 @@ Descripción breve del tipo base.
 
 **Propiedades**:
 
-- _nombre_, de tipo \<Tipo1\>, consultable. 
-- _apellidos_, de tipo \<Tipo2\>, consultable. 
-- dni, de tipo \<String\>, consultable. 
-- fechaNacimiento, de tipo \<LocalDate\>, consultable . 
+- _nombre_, de tipo String, consultable. 
+- _apellidos_, de tipo String, consultable. 
+- dni, de tipo String, consultable. 
+- fechaNacimiento, de tipo LocalDate, consultable . 
 
-**Constructores**: 
 
-- Static Persona of: Descripción del constructor 1.
-- C2: Descripción del constructor 2.
 
 **Restricciones**:
  
@@ -52,16 +49,15 @@ Descripción breve del tipo base.
 **Criterio de igualdad**: Asociado por defecto al Record.
 
 **Criterio de ordenación**:Se ordena por dni.
+
 **Propiedades Derivadas**:
-- edad, de tipo \<Integer\>, consultable,derivada, a partir de la fecha de nacimiento. 
+- edad, de tipo Integer, consultable,derivada, a partir de la fecha de nacimiento. 
 - 
 **Otras operaciones**:
  
 -	_dniValido_: Devuelve un tipo Boolean que es cierto si el dni tiene nueve caracteres,de ellos,
 8 son dígitos y el restante una letra, y falso si no cumple alguna de estas condiciones.	
 
-#### Tipos auxiliares
-Descripción de los tipos auxiliares que sean necesarios añadir al proyecto.
 
 ### Factoría
 Descripción breve de la factoría.
@@ -69,26 +65,23 @@ Descripción breve de la factoría.
 - _método static of_: recibe nombre, apellidos, dni y fecha de nacimiento y devuelve un objeto persona.
 -	_método static parse_: Recibe una cadena con un formato específico y devuelve un objeto  persona.
 
+
+
 ### Tipo Paciente
 
-Descripción breve del tipo contenedor.
 
 **Propiedades**:
 
-- _persona_, de tipo \<Persona\>, consultable. 
-- _codigoIngreso_, de tipo \<String\>, consultable.
-- _fechaHoraIngreso_, de tipo \<LocalDateTime\>, consultable. 
-
-
-**Constructores**: 
-
-- C1: Descripción del constructor 1.
-- C2: Descripción del constructor 2.
+- _persona_, de tipo Persona, consultable. 
+- _codigoIngreso_, de tipo String, consultable.
+- _fechaHoraIngreso_, de tipo LocalDateTime, consultable. 
 
 
 **Restricciones**:
  
 - R1: La fecha y hora de ingreso debe ser anterior o igual a la fecha de hoy.
+
+**Representación como cadena**: por defecto asociado al record.
 
 **Criterio de igualdad**: Asociado por defecto al Record.
 
@@ -96,15 +89,9 @@ Descripción breve del tipo contenedor.
 
 **Propiedades derivadas**
  
--	_fechaIngreso_, de tipo \<LocalDate\>, consultable,derivada, a partir de la fecha y hora de ingreso.
--	_horaIngereso_, de tipo \<String\>, consultable,derivada, a partir de la fecha y hora de ingreso.
--	
-**Otras operaciones**:
- 
--	_método 1_: Descripción del método 1.
+-	_fechaIngreso_, de tipo LocalDate, consultable,derivada, a partir de la fecha y hora de ingreso.
+-	_horaIngereso_, de tipo String, consultable,derivada, a partir de la fecha y hora de ingreso.
 
-#### Tipos auxiliares
-Descripción de los tipos auxiliares que sean necesarios añadir al proyecto.
 
 ### Factoría
 Descripción breve de la factoría.
@@ -114,22 +101,16 @@ Descripción breve de la factoría.
 
 ### Tipo PacienteEstudio
 
-Descripción breve del tipo contenedor.
 
 **Propiedades**:
 
-- _Id_, de tipo \<String\>, consultable. 
-- _genero_, de tipo \<String\>, consultable.
-- _edad_, de tipo \<Double\>, consultable.
-- _hipertension_, de tipo \<Boolean\>, consultable.
-- _enfermedadCorazon_, de tipo \<Boolean\>, consultable.
-- _tipoResidencia_, de tipo \<TipoResidencia\>, consultable.
-- _nivelMedioGlucosa_, de tipo \<Double\>, consultable.
-
-**Constructores**: 
-
-- C1: Descripción del constructor 1.
-- C2: Descripción del constructor 2.
+- _id_, de tipo String, consultable. 
+- _genero_, de tipo String, consultable.
+- _edad_, de tipo Double, consultable.
+- _hipertension_, de tipo Boolean, consultable.
+- _enfermedadCorazon_, de tipo Boolean, consultable.
+- _tipoResidencia_, de tipo TipoResidencia, consultable.
+- _nivelMedioGlucosa_, de tipo Double, consultable.
 
 
 **Restricciones**:
@@ -137,16 +118,11 @@ Descripción breve del tipo contenedor.
 - R1: La edad tiene que ser mayor o igual que cero y menor o igual que 130.
 - R2: El nivel medio de glucosa tiene que ser mayor o igual que cero.
 
+**Representación como cadena**: Por defecto asociado al record.
+
 **Criterio de igualdad**: Por defecto asociado al record. 
 
-**Criterio de ordenación**: Según la edad y el id
-
-**Otras operaciones**:
- 
--	_método 1_: Descripción del método 1.
-
-#### Tipos auxiliares
-Descripción de los tipos auxiliares que sean necesarios añadir al proyecto.
+**Criterio de ordenación**: Según la edad y el id.
 
 ### Factoría
 Descripción breve de la factoría.
@@ -161,18 +137,13 @@ Descripción breve del tipo contenedor.
 
 **Propiedades**:
 
-- _Fecha_, de tipo \<LocalDate\>, consultable. 
-- _comunidad_, de tipo \<String\>, consultable.
-- _pfizer_, de tipo \<Integer\>, consultable.
-- _moderna_, de tipo \<Integer\>, consultable.
-- _astrazeneca_, de tipo \<Integer\>, consultable.
-- _janssen_, de tipo \<Integer\>, consultable.
-- _numeroTotal_, de tipo \<Integer\>, consultable.
-
-**Constructores**: 
-
-- C1: Descripción del constructor 1.
-- C2: Descripción del constructor 2.
+- _Fecha_, de tipo LocalDate, consultable. 
+- _comunidad_, de tipo String, consultable.
+- _pfizer_, de tipo Integer, consultable.
+- _moderna_, de tipo Integer, consultable.
+- _astrazeneca_, de tipo Integer, consultable.
+- _janssen_, de tipo Integer, consultable.
+- _numeroTotal_, de tipo Integer, consultable.
 
 
 **Restricciones**:
@@ -189,14 +160,11 @@ Descripción breve del tipo contenedor.
  
 -	_numeroTotal_, de tipo \<Integer\>, consultable,derivada, siendo la suma de dosis de Pfizer, moderna, astrazeneca y janssen.
 
-#### Tipos auxiliares
-Descripción de los tipos auxiliares que sean necesarios añadir al proyecto.
-
 ### Factoría
 Descripción breve de la factoría.
 
-- _método static of_:  Recibe valores para cada propiedad básica y devuelve un objeto del tipo PacienteEstudio. 
--	_método static parse_: Recibe valores para cada propiedad básica y devuelve un objeto del tipo PacienteEstudio.  
+- _método static of_:  Reecibe valores para cada propiedad básica y devuelve un objeto del tipo Vacunacion. 
+-	_método static parse_: Recibe una cadena con un formato específico y devuelve un objeto del tipo Vacunacion.
 
 
 ### Tipo Medicamento
@@ -205,18 +173,18 @@ Descripción breve del tipo contenedor.
 
 **Propiedades**:
 
-- _nombreMedicamento_, de tipo \<String\>, consultable. 
-- _tipoMedicamento_, de tipo \<TipoMedicamento\>, consultable.
-- _codigoEnfermedad_, de tipo \<String\>, consultable.
-- _farmaceutica_, de tipo \<String\>, consultable.
-- _puntuacion_, de tipo \<Double\>, consultable.
-- _indiceSomatico_, de tipo \<Integer\>, consultable.
-- _fechaCatalogo_, de tipo \<LocalDate\>, consultable y modificable.
+- _nombreMedicamento_, de tipo String, consultable. 
+- _tipoMedicamento_, de tipo TipoMedicamento, consultable.
+- _codigoEnfermedad_, de tipo String, consultable.
+- _farmaceutica_, de tipo String, consultable.
+- _puntuacion_, de tipo Double, consultable.
+- _indiceSomatico_, de tipo Integer, consultable.
+- _fechaCatalogo_, de tipo LocalDate, consultable y modificable.
 
 **Constructores**: 
 
-- C1: Descripción del constructor 1.
-- C2: Descripción del constructor 2.
+- C1:recibe un parámetro por cada propiedad básica del tipo.
+
 
 
 **Restricciones**:
@@ -233,12 +201,8 @@ Descripción breve del tipo contenedor.
 
 **Propiedades derivadas**
  
--	_tratarEnfermdad_, de tipo \<Boolean\>, consultable,derivada, siendo cierta(true) si el código de la 
-enfermedad coincide con un parámetro de tipo cadena que reciben como argumento 
-la propiedad).
+-	_tratarEnfermdad_, de tipo Boolean, consultable,derivada, siendo cierta(true) si el código de la enfermedad coincide con un parámetro de tipo cadena que reciben como argumento la propiedad.
 
-#### Tipos auxiliares
-Descripción de los tipos auxiliares que sean necesarios añadir al proyecto.
 
 ### Factoría
 Descripción breve de la factoría.
