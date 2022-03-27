@@ -1,5 +1,5 @@
 # Proyecto del Segundo Cuatrimestre Fundamentos de Programación (Curso  2021/2022)
-Autor/a: \Javier Nieto Vicioso\  uvus:\javnievic@us.es\
+Autor/a: Javier Nieto Vicioso  uvus:javnievic@us.es
 
 Aquí debes añadir la descripción del dataset y un enunciado del dominio del proyecto.
 
