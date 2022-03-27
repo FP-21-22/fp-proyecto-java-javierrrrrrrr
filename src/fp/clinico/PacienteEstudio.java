@@ -57,11 +57,11 @@ public record PacienteEstudio(String id,String genero, Double edad,Boolean hiper
 	
 	//Representación como cadena:
 	
-//	public String toString() {
-//		
-//		String res= "id="+id+", edad="+edad;
-//		return res;
-//	}
+	public String toString() {
+		
+		String res= "id="+id+", edad="+edad;
+		return res;
+	}
 	
 	//Orden Natural:
 	
@@ -79,7 +79,7 @@ public record PacienteEstudio(String id,String genero, Double edad,Boolean hiper
 	//TEST:
 	
 	public static void main(String[] args) {
-		PacienteEstudio paciente1= PacienteEstudio.of("2431934Ñ", "Male",50., false, false, TipoResidencia.URBANA, 83.78);
+		PacienteEstudio paciente1= PacienteEstudio.of("2431934Ñ", "Male",52., false, false, TipoResidencia.URBANA, 81.78);
 		PacienteEstudio paciente2= PacienteEstudio.of("23231934P", "Female",46., false, false, TipoResidencia.RURAL, 83.78);
 		System.out.println(paciente1);
 		

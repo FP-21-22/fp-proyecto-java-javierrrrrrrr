@@ -18,7 +18,7 @@ public class TestPacienteEstudio {
 		System.out.println("==paciente2==");
 		System.out.println(paciente2);
 		System.out.println("==toString==");
-		//System.out.println(paciente1.toString());
+		System.out.println(paciente1.toString());
 		System.out.println("==parse==");
 		System.out.println(paciente2.parse("63063234K;Female;80.;false;false;URBANA;83.84"));
 		System.out.println("==compareTo==");

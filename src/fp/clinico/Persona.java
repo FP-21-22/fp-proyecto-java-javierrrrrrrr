@@ -21,13 +21,13 @@ public record Persona(String nombre,String apellidos,String dni,
 		return res;
 	}
 	
-
+	//Restricciones:
 	public Persona{
 		Checkers.check("La fecha de nacimiento debe ser anterior a la fecha actual:" , fechaNacimiento.isBefore(LocalDate.now()));
 		Checkers.check("El dni debe ser una cadena con ocho dígitos y seguidos de una letra", dniValido(dni));
 	}
 	
-	
+	//Otros Métodos:
 	public boolean dniValido(String dni) {
 	
 		boolean res= false;
