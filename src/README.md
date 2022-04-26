@@ -226,6 +226,9 @@ Descripción breve de la factoría.
 -	_método static parse_: Recibe una cadena con un formato específico y devuelve un objeto del tipo Vacunacion.
 
 
+###FactoriaVacunas:
+	Se encarga de leer el fichero "ccaa_vacunas_3.csv", gracias al método leeFichero, y  crear una lista con las distintas vacunas del fichero.
+	
 ### Tipo Medicamento
 
 Descripción breve del tipo contenedor.
@@ -268,6 +271,12 @@ Descripción breve de la factoría.
 
 -	_método static parse_: Recibe una cadena con un formato específico y devuelve un objeto de tipo Medicamento.  
 
+	
+	
+
+###FactoriaMedicamentos
+	
+	Se encarga de leer el fichero "medicamentos.csv", gracias al método leeFichero, y  crear una lista con los distintos medicamentos del fichero.
 
 
 
