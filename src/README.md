@@ -1,22 +1,16 @@
 # Proyecto del Segundo Cuatrimestre Fundamentos de Programación (Curso  2021/2022)
-Autor/a: \<Javier Nieto Vicioso\  uvus:\javnievic@us.es\
+Autor/a: Javier Nieto Vicioso  uvus:javnievic@us.es
 
-
+Aquí debes añadir la descripción del dataset y un enunciado del dominio del proyecto.
 
 
 ## Estructura de las carpetas del proyecto
 
 * **/src**: Contiene los diferentes archivos que forman parte del proyecto. Debe estar estructurado en los siguentes paquetes
-  * **fp.clinico**: Paquete que contiene las clases "Paciente","PacienteEstudio" y "Persona" y un enumerado "TipoResidencia" del proyecto.
-  * **fp.clinico.test**: Paquete que contiene las clases de test del proyecto del paquete fp.clinico.
-  * **fp.common**: Paquete que contiene los tipos auxiliares del proyecto.
-  * **fp.utiles**: Paquete que contiene las clases de utilidad. 
-  *  **fp.famaceutico**:  Paquete que contiene las clases "Medicamento" y el enumerado "TipoEnumerado" del proyecto.
-  *  **fp.farmaceutico.test**: Paquete que contiene las clases de test del proyecto del paquete fp.famaceutico.
-  *  **fp.vacunas**: Paquete que contiene la clase Vacunacion.
-  *  **fp.vacunas.test**: Paquete que contiene las clases de test del proyecto del paquete fp.vacunas.
-
-
+  * **fp.\<clinico\>**: Paquete que contiene los tipos del proyecto.
+  * **fp.\<clinico\>.test**: Paquete que contiene las clases de test del proyecto.
+  * **fp.common**: Paquete que contiene los tipos auxiliares del proyecto
+  * **fp.utiles**:  Paquete que contiene las clases de utilidad. 
 * **/data**: Contiene el dataset o datasets del proyecto
     * **\<dataset1.csv\>**: Añade una descripción genérica del dataset.
     * **\<dataset2.csv\>**: Añade una descripción del resto de datasets que puedas tener.
@@ -33,10 +27,10 @@ El dataset está compuesto por \<N\> columnas, con la siguiente descripción:
 
 ## Tipos implementados
 
-En este proyecto he usado 5 tipos los 4 primeros(Paciente, PacienteEstudio,Persona,Vacunacion),han sido implementados con un record, ya que sus propiedades son inmutables, y la útima(Medicamento), que es una clase, con sus getters y setters.
+Describe aquí los tipos que usas en tu proyecto.
 
 ### Tipo Persona
-Clase que describe objetos de tipo Persona,nombre,apellidos,dni,fecha de nacimiento y la edad de la persona.
+Descripción breve del tipo base.
 
 **Propiedades**:
 
@@ -66,7 +60,7 @@ Clase que describe objetos de tipo Persona,nombre,apellidos,dni,fecha de nacimie
 
 
 ### Factoría
-
+Descripción breve de la factoría.
 
 - _método static of_: recibe nombre, apellidos, dni y fecha de nacimiento y devuelve un objeto persona.
 -	_método static parse_: Recibe una cadena con un formato específico y devuelve un objeto  persona.
@@ -74,7 +68,7 @@ Clase que describe objetos de tipo Persona,nombre,apellidos,dni,fecha de nacimie
 
 
 ### Tipo Paciente
-Clase que describe objetos de tipo Paciente, cada uno con las propiedades:persona, el código de ingreso, la fecha y la hora a la que ingresóm la fecha de ingreso ,así como la hora de su ingreso.
+
 
 **Propiedades**:
 
@@ -100,13 +94,13 @@ Clase que describe objetos de tipo Paciente, cada uno con las propiedades:person
 
 
 ### Factoría
-
+Descripción breve de la factoría.
 
 - _método static of_: Recibe nombre, apellidos, dni, fecha de nacimiento, código y fecha y hora de ingreso y devuelve un objeto paciente.
 -	_método static of: Recibe un objeto persona, un código y una fecha y hora de ingreso y devuelve un objeto paciente. 
 
 ### Tipo PacienteEstudio
-Clase que describe objetos de tipo PacienteEstudio, cada uno con las propiedades: id, el género de la persona,su edad,la hipertensión, si tiene o no una enfermedad del corazon, su tipo de residencia, el nivel medio de glucosa, y si es factor de riesgo.
+
 
 **Propiedades**:
 
@@ -131,14 +125,15 @@ Clase que describe objetos de tipo PacienteEstudio, cada uno con las propiedades
 **Criterio de ordenación**: Según la edad y el id.
 
 ### Factoría
-
+Descripción breve de la factoría.
 
 - _método static of_:  Recibe valores para cada propiedad básica y devuelve un objeto del tipo PacienteEstudio. 
 -	_método static parse_: Recibe valores para cada propiedad básica y devuelve un objeto del tipo PacienteEstudio.  
 
 
 ### Tipo Vacunacion
-Clase que describe objetos de tipo Vacunacion, cada uno con las propiedades:la fecha de vacunación, la comunidad, la cantidad de vacunados con pfizer, moderna, astrazenenca, janssen, el número de personas y el número total de vacunados.
+
+Descripción breve del tipo contenedor.
 
 **Propiedades**:
 
@@ -166,7 +161,7 @@ Clase que describe objetos de tipo Vacunacion, cada uno con las propiedades:la f
 -	_numeroTotal_, de tipo \<Integer\>, consultable,derivada, siendo la suma de dosis de Pfizer, moderna, astrazeneca y janssen.
 
 ### Factoría
-
+Descripción breve de la factoría.
 
 - _método static of_:  Reecibe valores para cada propiedad básica y devuelve un objeto del tipo Vacunacion. 
 -	_método static parse_: Recibe una cadena con un formato específico y devuelve un objeto del tipo Vacunacion.
@@ -174,7 +169,7 @@ Clase que describe objetos de tipo Vacunacion, cada uno con las propiedades:la f
 
 ### Tipo Medicamento
 
-Clase que describe objetos de tipo Medicamento, cada uno con las propiedades: el nombre del medicamento, el tipo ed medicamneto que es, el código de la enfermedad,la farmaceútica,la puntuación, el índice somático, la fecha de catálogo y si se puede o no tratar la enfermedad.
+Descripción breve del tipo contenedor.
 
 **Propiedades**:
 
@@ -210,7 +205,7 @@ Clase que describe objetos de tipo Medicamento, cada uno con las propiedades: el
 
 
 ### Factoría
-
+Descripción breve de la factoría.
 
 -	_método static parse_: Recibe una cadena con un formato específico y devuelve un objeto de tipo Medicamento.  
 
