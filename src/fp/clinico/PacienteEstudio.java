@@ -20,7 +20,7 @@ public record PacienteEstudio(String id,String genero, Double edad,Boolean hiper
 		Checkers.check(" La edad tiene que ser mayor o igual que cero y menor o igual que 130", 0<=edad && edad<=130);
 		Checkers.check("El nivel medio de glucosa tiene que ser mayor o igual que cero", nivelMedioGlucosa>=0);
 		
-	}
+	} 
 	
 	//Método static parse:
 	

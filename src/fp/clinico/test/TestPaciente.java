@@ -23,6 +23,6 @@ public class TestPaciente {
 		System.out.println(pa2);
 //		
 		
-		
+		  
 	}
 }

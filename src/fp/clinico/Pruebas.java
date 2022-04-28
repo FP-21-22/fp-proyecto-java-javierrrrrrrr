@@ -27,9 +27,24 @@ public class Pruebas {
 		
 		
 		
+		List<Integer> ls= new ArrayList<Integer>();
 		
+		ls.add(21);
+		ls.add(34);
+		Integer sum= 0;
+		for ( Integer i=0; i<ls.size();i++) {
+			
+			sum += ls.get(i);
+			 
+		}
+		System.out.println(sum);
+			
+		int a= 23;
+		int b= 2;
 		
-		
+		Double re; 
+		re= (double) a/b;
+		System.out.println(re);
 		
 		
 		

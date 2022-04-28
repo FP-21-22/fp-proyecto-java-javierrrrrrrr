@@ -11,8 +11,8 @@ public record Vacunacion(LocalDate fecha, String comunidad,Integer pfizer,Intege
 	//Restricciones:
 	
 	public Vacunacion{
-		LocalDate fecha1feb= LocalDate.of(2021, 2, 1);
-		Checkers.check("La fecha de debe ser posterior al 01/02/2021", fecha.isAfter(fecha1feb));
+		LocalDate fecha1feb= LocalDate.of(2021, 1, 1);
+		Checkers.check("La fecha de debe ser posterior al 01/01/2021", fecha.isAfter(fecha1feb));
 	}
 
 	//Propiedad Derivada:
@@ -21,7 +21,7 @@ public record Vacunacion(LocalDate fecha, String comunidad,Integer pfizer,Intege
 		Integer res= this.pfizer + this.moderna + this.astrazeneca +this.janssen;
 		return res;
 	}
-	
+	 
 	//Método static of:
 	
 	public static Vacunacion of(LocalDate fecha, String comunidad,Integer pfizer,Integer moderna,

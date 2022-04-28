@@ -1,5 +1,5 @@
 # Proyecto del Segundo Cuatrimestre Fundamentos de Programación (Curso  2021/2022)
-Autor/a: Javier Nieto Vicioso  uvus:javnievic@us.es
+Autor/a: \<avier Nieto Vicioso\  uvus:\javnievic@us.es\
 
 Aquí debes añadir la descripción del dataset y un enunciado del dominio del proyecto.
 
@@ -131,65 +131,6 @@ Descripción breve de la factoría.
 -	_método static parse_: Recibe valores para cada propiedad básica y devuelve un objeto del tipo PacienteEstudio.  
 
 
-
-###Interfaz
-EstudioClinico
-
-Se encarga de añadir los distintos métodos que vamos a implementar posteriormente en las clases EstudioClinicoBucles y EstudioClinicoStreams.
-
- Propiedades de lista :
-	 Integer numeroPacientes()
-	 incluyePaciente(PacienteEstudio paciente) 
-	incluyePacientes(Collection<PacienteEstudio> pacientes)
-	eliminaPaciente(PacienteEstudio paciente)
-	 estaPaciente(PacienteEstudio paciente)
-	 borraEstudio() 
- 
- Método de factoría :
-	EstudioClinico of(String nombreFichero)
-	 List<PacienteEstudio> leeFichero(String nombreFichero)
- 
- Tratamientos secuenciales:  
-	 Boolean todosPacienteSonDelTipo(TipoResidencia tipo)
-	 Boolean existeAlgunPacienteDelTipo(TipoResidencia tipo)
-	 Integer numeroPacientesFactorRiesgo()
-	 Double edadMediaPacientesConFactorRiesgo()
-	 List<PacienteEstudio> filtraPacientesPorEdad(Double edad) 
-	 Map<String,List<PacienteEstudio>> agruparPacientesEdadMayorQuePorGenero(Double edad)
-	 Map<String,Long> numeroPacientesPorGenero()
-	 Map<String,Double> edadMediaPacientesPorPorGenero()
-
-
- ###EstudioClinicoBucles:
- Constructores:
- 
- C1: Construye una lista de la clase PacienteEstudio vacía.
- C2: Construye una lista de objetos de la clase PacienteEstudio.
- C3: Se encarga de parsear una línea del fichero a un objeto del tipo PacienteEstudio.
-  Propiedades de lista :
-	 Integer numeroPacientes():Devuelve el número total de pacientes.
-	 incluyePaciente(PacienteEstudio paciente) :añade un nuevo paciente a la lista.
-	incluyePacientes(Collection<PacienteEstudio> pacientes): incluye en la lista una serie de pacientes que forman una colección de tipo PacienteEstudio.
-	eliminaPaciente(PacienteEstudio paciente):elimina de la lista un paciente dado.
-	 estaPaciente(PacienteEstudio paciente):Comprueba si hay o no un paciente en la lista.
-	 borraEstudio(): elimina todos los pacientes de la lista.
- 
- 
- Método de factoría :
-	EstudioClinico of(String nombreFichero):metodo of de EstudioClinico.
-	 List<PacienteEstudio> leeFichero(String nombreFichero): Lee el fichero dado(cómo la dirección nombreFichero) y los devuelve cómo una lista.
- 
- Tratamientos secuenciales:  
-	 Boolean todosPacienteSonDelTipo(TipoResidencia tipo):comprueba si todos los pacientes son del tipo dado.
-	 Boolean existeAlgunPacienteDelTipo(TipoResidencia tipo): devuelve true si hay al menos  un paciente del tipo dado.
-	 Integer numeroPacientesFactorRiesgo(): devuelve el número de pacientes que son factor de riesgo(true)
-	 Double edadMediaPacientesConFactorRiesgo(): devuelve la edad media de aquellos pacientes que sean factor de riesgo.
-	 List<PacienteEstudio> filtraPacientesPorEdad(Double edad): retorna una lista de tipo paciente estudio de aquellos pacientes sean de la edad dada.
-	 Map<String,List<PacienteEstudio>> agruparPacientesEdadMayorQuePorGenero(Double edad): devuelve un diccionario en el que las claves son los generos y los valores los pacientes cuya edad sea mayor que la dada.
-	 Map<String,Long> numeroPacientesPorGenero(): Retorna el número de paciente de cada genero.
-	 Map<String,Double> edadMediaPacientesPorPorGenero():Retorna la edad media de los pacientes de cada género.
- 
- 
 ### Tipo Vacunacion
 
 Descripción breve del tipo contenedor.
@@ -226,9 +167,6 @@ Descripción breve de la factoría.
 -	_método static parse_: Recibe una cadena con un formato específico y devuelve un objeto del tipo Vacunacion.
 
 
-###FactoriaVacunas:
-	Se encarga de leer el fichero "ccaa_vacunas_3.csv", gracias al método leeFichero, y  crear una lista con las distintas vacunas del fichero.
-	
 ### Tipo Medicamento
 
 Descripción breve del tipo contenedor.
@@ -271,12 +209,6 @@ Descripción breve de la factoría.
 
 -	_método static parse_: Recibe una cadena con un formato específico y devuelve un objeto de tipo Medicamento.  
 
-	
-	
-
-###FactoriaMedicamentos
-	
-	Se encarga de leer el fichero "medicamentos.csv", gracias al método leeFichero, y  crear una lista con los distintos medicamentos del fichero.
 
 
 

@@ -27,5 +27,5 @@ public static void main(String[] args) {
 		System.out.println(p1.parse("Juan,García Rodríguez,12755078Z,20/03/1965"));
 		System.out.println("==CompareTo==");
 		System.out.println(p2.compareTo(p1));
-	}
+	}  
 }

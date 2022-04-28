@@ -16,7 +16,7 @@ public class TestVacunacion {
 		System.out.println("==compareTo==");
 		System.out.println(vacunacion1.compareTo(vacunacion2));
 		System.out.println("==parse==");
-		System.out.println(vacunacion2.parse("04/12/2022;Andalucía;140295;0;0;0;0"));
-	}
+		System.out.println(Vacunacion.parse("04/12/2022;Andalucía;140295;0;0;0;0"));
+	} 
 
 }

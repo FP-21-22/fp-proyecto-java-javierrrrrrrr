@@ -20,7 +20,7 @@ public record Paciente(Persona persona,String codigoIngreso,
 	}
 	
 	//Métodos static of: 
-	
+	  
 	public static Paciente of(String nombre,String apellidos,String dni,LocalDate fechaNacimiento,String codigoIngreso,LocalDateTime fechaHoraIngreso) {
 			Persona persona=new Persona(nombre,apellidos,dni,fechaNacimiento);
 			Paciente res = new Paciente(persona,codigoIngreso,fechaHoraIngreso);
