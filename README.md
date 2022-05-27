@@ -18,19 +18,45 @@ Autor/a: \<Javier Nieto Vicioso\  uvus:\javnievic@us.es\
 
 
 * **/data**: Contiene el dataset o datasets del proyecto
-    * **\<dataset1.csv\>**: Añade una descripción genérica del dataset.
-    * **\<dataset2.csv\>**: Añade una descripción del resto de datasets que puedas tener.
+    * **\<ccaa_vacunas_3.csv\>**: Dataset de las distintas vacunas.
+    * **\<estudio_clinico.csv\>**: Dataset del estudio clínico.
+    * **\<medicamentos.csv\>**: Dataset de una serie de medicamentos.
     
 ## Estructura del *dataset*
-
-Aquí debes describir la estructura del dataset explicando qué representan los datos que contiene y la descripción de cada una de las columnas. Incluye también la URL del dataset original.
-
-El dataset está compuesto por \<N\> columnas, con la siguiente descripción:
-
-* **\<columna 1>**: de tipo \<tipo\>, representa....
-* **\<columna 2>**: de tipo \<tipo\>, representa....
+## ccaa_vacunas_3.csv
 
 
+El dataset está compuesto por 1788 columnas, con la siguiente descripción:
+
+* **Fecha_publicación**: de tipo LocalDate, representa la fecha de la vacuna
+* **CCAA**: de tipo String, representa la comunidad autónoma.
+* **Pfizer**: de tipo Integer, representa el nº de vacunas pfizer.
+* **Moderna**: de tipo Integer,representa el nº de vacunas Moderna.
+* **Astrazeneca**: de tipo Integer,representa el nº de vacunas Astrazeneca.
+* **Janssen**: de tipo Integerrepresenta el nº de vacunas ed Janssen.
+
+
+## estudio_clinico.csv
+
+El dataset está compuesto por 18601 columnas, con la siguiente descripción:
+
+* **id** : de tipo String, representa el id del paciente
+* **edad** : de tipo Double, representa la edad del paciente.
+* **hipertensión** : de tipo boolean, representa si tiene o no hipertensión.
+* **enfermedadCorazon** : de tipo boolean, representa si tiene enfermedad en el corazón.
+*  **tipoResidencia** : de tipo TipoResidencia, representa el tipo de residencia.
+*   **nivelMedioGlucosa** : de tipo Double,  representa el nivel medio de la glucosa.
+*
+## medicamentos.csv
+El dataset está compuesto por 21 columnas, con la siguiente descripción:
+* **Nombre_medicamento** : de tipo String, representa el nombre del medicamento.
+* **Tipo_medicamento** : de tipo TipoMedicamento, representa el tipo del medicamento
+* * **Codigo_enfermedad** : de tipo String, representa el código de la enfermedad.
+* * **Farmaceutica** : de tipo String, representa la farmaceutica .
+* * **Puntuacion** : de tipo Double, representa la puntuacion del medicamento.
+* * **IndiceSomatico** : de tipo Integer, representa el índice somático
+* * * **Fecha_catalogo** : de tipo LocalDate, representa la la fecha de catálogo.
+* 
 ## Tipos implementados
 
 En este proyecto he usado 5 tipos los 4 primeros(Paciente, PacienteEstudio,Persona,Vacunacion),han sido implementados con un record, ya que sus propiedades son inmutables, y la útima(Medicamento), que es una clase, con sus getters y setters.
