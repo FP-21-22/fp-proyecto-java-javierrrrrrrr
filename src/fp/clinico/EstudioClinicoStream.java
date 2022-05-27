@@ -1,6 +1,8 @@
 package fp.clinico;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -8,7 +10,10 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import fp.farmaceutico.Medicamento;
 
 public class EstudioClinicoStream implements EstudioClinico {
 	
@@ -79,14 +84,36 @@ public EstudioClinicoStream() {
 
 	@Override
 	public List<PacienteEstudio> leeFichero(String nombreFichero) {
-		List<PacienteEstudio> ap = null;
+		
+		List<PacienteEstudio> res = new ArrayList<PacienteEstudio>();
+		List<String> aux =new ArrayList<String>();
+		
+		try {
+			aux= Files.readAllLines(Paths.get(nombreFichero));
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+		int cont = 0;
+		for (String e: aux) {
+			if ( cont>0) {
+				PacienteEstudio p= parseaLinea(e);
+				res.add(p);
+			}
+			cont++;
+		}
+		return res;
+		
+		
+//		Stream<Medicamento> res= null;
 //		try {
-//			Stream<PacienteEstudio> sv= Files.lines(Paths.get(nombreFichero),StandardCharsets.UTF_8)
-//					.skip(1)
-//					.map();
-//			ap = new List<PacienteEstudio>;
+//			res= Files.lines(Paths.get(nombreFichero)).
+//					skip(1).
+//					map(x-> Medicamento.parseaMedicamento(x));
+//		} catch(IOException e) {
+//			e.printStackTrace();
 //		}
-		return null;
+//		return res;
 	}
 
 	@Override
@@ -124,21 +151,27 @@ public EstudioClinicoStream() {
 
 	@Override
 	public Map<String, List<PacienteEstudio>> agruparPacientesEdadMayorQuePorGenero(Double edad) {
-		
-		lista.stream().filter(x->x.edad()>edad); 
-		return null; 
+		//List<PacienteEstudio> lista1= lista.stream().filter(x->x.edad()>edad).collect(Collectors.toList());
+		Map<String, List<PacienteEstudio>> res= lista.stream().
+				filter(x->x.edad()>edad).
+				sorted(Comparator.comparing(PacienteEstudio::genero)).
+				collect(Collectors.groupingBy(PacienteEstudio::genero,Collectors.toList())); 
+		return res;  
 	}
 
 	@Override
 	public Map<String, Long> numeroPacientesPorGenero() {
-		//lista.stream().sorted(Comparator.comparing(PacienteEstudio::))
-		return null;
+		Map<String, Long> res= lista.stream().sorted(Comparator.comparing(PacienteEstudio::genero))
+				.collect(Collectors.groupingBy(PacienteEstudio::genero, Collectors.counting()));
+				
+		return res;
 	}
 
 	@Override
 	public Map<String, Double> edadMediaPacientesPorPorGenero() {
-		// TODO Auto-generated method stub
-		return null;
+		Map<String,Double> res= lista.stream().sorted(Comparator.comparing(PacienteEstudio::genero)).
+				collect(Collectors.groupingBy(PacienteEstudio::genero,Collectors.averagingDouble(PacienteEstudio::edad)));
+		return res;
 	}
 
 }

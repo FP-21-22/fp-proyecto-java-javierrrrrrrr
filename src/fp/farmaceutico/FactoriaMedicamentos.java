@@ -7,13 +7,36 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
+import fp.farmaceutico.*;
+
 
 public class FactoriaMedicamentos {
 
 	
 	
 	
+	public static Stream<Medicamento> leeFichero2(String nombreFichero){
+		
+		Stream<Medicamento> res= null;
+		try {
+			res= Files.lines(Paths.get(nombreFichero)).
+					skip(1).
+					map(x-> Medicamento.parseaMedicamento(x));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return res;
+		
+		
+		
+	}
 	
+	public static ListadoMedicamentos leeFichero3(String nombreFichero){
+		Stream<Medicamento> st= leeFichero2(nombreFichero);
+		ListadoMedicamentos res= new ListadoMedicamentos(st);
+		return res; 
+	}
 	
 	
 	

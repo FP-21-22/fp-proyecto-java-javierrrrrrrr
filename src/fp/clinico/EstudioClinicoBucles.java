@@ -90,6 +90,7 @@ public class EstudioClinicoBucles implements EstudioClinico {
 		List<String> aux =new ArrayList<String>();
 		
 		try {
+			
 			aux= Files.readAllLines(Paths.get(nombreFichero));
 		}
 		catch(IOException e) {

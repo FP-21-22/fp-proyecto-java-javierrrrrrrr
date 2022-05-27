@@ -1,6 +1,6 @@
 package fp.clinico.test;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+
 
 import fp.clinico.Persona;
 
@@ -24,7 +24,7 @@ public static void main(String[] args) {
 		System.out.println("==P2==");
 		System.out.println(p2);
 		System.out.println("==Parse==");
-		System.out.println(p1.parse("Juan,García Rodríguez,12755078Z,20/03/1965"));
+		System.out.println(Persona.parse("Juan,García Rodríguez,12755078Z,20/03/1965"));
 		System.out.println("==CompareTo==");
 		System.out.println(p2.compareTo(p1));
 	}  

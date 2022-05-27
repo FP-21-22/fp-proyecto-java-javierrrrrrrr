@@ -1,14 +1,40 @@
 package fp.vacunas;
 
 import java.io.IOException;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class FactoriaVacunaciones {
+	
+	
+	
+	public static Stream<Vacunacion> leefichero2(String nombreFichero){
+		
+		Stream<Vacunacion> res= null;
+		try {
+			res= Files.lines(Paths.get(nombreFichero)).
+					skip(1).
+					map(x-> parseaLinea(x));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return res;
+		
+		
+	}
+	public static Vacunaciones leerfichero3(String fichero) {
+		Stream<Vacunacion> st= leefichero2(fichero);
+		Vacunaciones res= new Vacunaciones(st);
+		
+		return res;
+	}
+	
 	
 	
 	public static List<Vacunacion> leefichero(String nombreFichero){
